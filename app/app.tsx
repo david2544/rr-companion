@@ -9,9 +9,9 @@ import { ConnectedRouter } from 'connected-react-router';
 import history from '@app/utils/history';
 
 // firebase
-import Firebase from 'firebase';
-import 'firebase/analytics';
-import config from '@app/utils/firebaseConfig';
+// import Firebase from 'firebase';
+// import 'firebase/analytics';
+// import config from '@app/utils/firebaseConfig';
 
 // Import root app
 import configureStore from '@store/configureStore';
@@ -25,8 +25,8 @@ import 'file-loader?name=.htaccess!./.htaccess';
 const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app') as HTMLElement;
-Firebase.initializeApp(config);
-Firebase.analytics();
+// Firebase.initializeApp(config);
+// Firebase.analytics();
 
 const ConnectedApp = () => (
   <Provider store={store}>
