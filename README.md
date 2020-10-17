@@ -28,13 +28,13 @@ _A step by step series of examples that tell you how to get the development env 
 Clone this repo in your prefered location:
 
 ```console
-~# git clone git@github.com:davidcoroian/react-ts-boilerplate.git
+~# git clone git@github.com:davidcoroian/rr-companion.git
 ```
 
 Navigate to it and install required dependencies:
 
 ```console
-~# cd react-ts-boilerplate
+~# cd rr-companion
 ~# npm install
 ```
 
@@ -89,13 +89,13 @@ _Information about some of the scripts that might come in handy._
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/davidcoroian/react-ts-boilerplate/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/davidcoroian/rr-companion/tags).
 
 ## Authors
 
 - **David** - [Gitlhub profile](https://github.com/davidcoroian)
 
-See also the list of [contributors](https://github.com/davidcoroian/react-ts-boilerplate/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/davidcoroian/rr-companion/graphs/contributors) who participated in this project.
 
 ## Bundle analysis
 

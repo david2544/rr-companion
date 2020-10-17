@@ -1,10 +1,10 @@
 {
-  "name": "react-ts-boilerplate",
+  "name": "rr-companion",
   "version": "0.0.1",
   "description": "Pension Products React frontend",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidcoroian/react-ts-boilerplate"
+    "url": "https://github.com/davidcoroian/rr-companion"
   },
   "engines": {
     "npm": ">=6.4.1",
