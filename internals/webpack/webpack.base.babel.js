@@ -14,7 +14,7 @@ module.exports = options => ({
   output: {
     // Compile into js/build.js
     path: path.resolve(process.cwd(), 'build'),
-    publicPath: '/rr-companion',
+    publicPath: '/rr-companion/',
 
     // Merge with env dependent settings
     ...options.output,
@@ -66,7 +66,7 @@ module.exports = options => ({
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        test: /\.(eot|otf|ttf|woff|woff2|wav)$/,
         use: 'file-loader',
       },
       {
@@ -133,6 +133,7 @@ module.exports = options => ({
       '@Layout': path.resolve(process.cwd(), './app/Layout'),
       '@store': path.resolve(process.cwd(), './app/store'),
       '@common': path.resolve(process.cwd(), './app/common'),
+      '@hooks': path.resolve(process.cwd(), './app/hooks'),
       '@images': path.resolve(process.cwd(), './assets/images'),
       'react-dom': '@hot-loader/react-dom',
     },

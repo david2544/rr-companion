@@ -1,0 +1,41 @@
+.background {
+  height: 100vh;
+  background-color: #f8f8f8;
+
+  .signupBox {
+    margin-top: 15vh;
+    background-color: #ffffff;
+    padding: 75px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+  }
+
+  .signupForm {
+    .heading {
+      margin: 25px 0;
+      font-weight: bold;
+    }
+    padding-left: 30px;
+
+    .button {
+      margin-top: 40px;
+    }
+  }
+
+  .signupImage {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 294px;
+    }
+
+    .alreadyMemeberLink {
+      margin-top: 40px;
+      text-align: center;
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}

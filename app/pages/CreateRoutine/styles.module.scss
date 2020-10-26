@@ -25,4 +25,15 @@
     border-radius: 20px;
     height: 100%;
   }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .editEntriesButtons {
+      flex: 0.08;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
