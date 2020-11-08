@@ -13,6 +13,7 @@ const Home: React.FC = () => (
       <Row>
         <Col md={12} className={styles.boxWrapper}>
           <Col md={12} className={styles.boxHeading}>
+            <Link to="/records">Records</Link>
             <Link to="/create-routine">Create/Update routine</Link>
             <Button
               className={styles.signoutButton}

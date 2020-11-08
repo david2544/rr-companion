@@ -1,0 +1,39 @@
+.home {
+  height: 100vh;
+  background-color: #f8f8f8;
+
+  .boxHeading {
+    background-color: #ffffff;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .boxWrapper {
+    margin-top: 15px;
+    width: 100%;
+    padding: 0 7.5px;
+  }
+
+  .box {
+    background-color: #ffffff;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    padding: 75px 25px;
+    border-radius: 20px;
+    height: 100%;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .editEntriesButtons {
+      flex: 0.08;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

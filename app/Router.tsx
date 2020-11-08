@@ -7,6 +7,7 @@ const Home = React.lazy(() => import('@pages/Home'));
 const Login = React.lazy(() => import('@pages/Login'));
 const SignUp = React.lazy(() => import('@pages/SignUp'));
 const CreateRoutine = React.lazy(() => import('@pages/CreateRoutine'));
+const Records = React.lazy(() => import('@pages/Records'));
 // [IMPORT NEW PAGE ABOVE] < Needed for generating containers seamlessly
 
 const Router: React.FC = () => (
@@ -16,6 +17,7 @@ const Router: React.FC = () => (
       <Route exact path="/login" render={() => <Login />} />
       <Route exact path="/signup" render={() => <SignUp />} />
       <Route exact path="/create-routine" render={() => <CreateRoutine />} />
+      <Route path="/records" render={() => <Records />} />
       {/* [INSERT NEW ROUTE ABOVE] < Needed for generating containers seamlessly */}
     </Switch>
   </HashRouter>

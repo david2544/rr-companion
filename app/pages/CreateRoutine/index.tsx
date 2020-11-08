@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import app from '@utils/firebaseConfig';
 import Firebase from 'firebase/app';
@@ -17,7 +17,7 @@ const formatGroupLabel = data => (
 
 const saveSelectedOptions = (selectedOptions, currentUser) => {
   if (currentUser) {
-    Firebase.database().ref('users').child(currentUser.uid).set(selectedOptions);
+    Firebase.database().ref('users').child(currentUser.uid).child('routine').set(selectedOptions);
   }
 };
 
@@ -30,22 +30,42 @@ const addNewExcercise = (entries, selectedOptions, setSelectedOptions) =>
         <Select
           onChange={data => setSelectedOptions({ ...selectedOptions, [index]: data })}
           formatGroupLabel={formatGroupLabel}
+          defaultValue={selectedOptions[index]}
           options={excerciseOptions}
         />
       </td>
     </tr>
   ));
+
 interface CreateRoutineProps {}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CreateRoutine: React.FC<CreateRoutineProps> = props => {
   const [excerciseEntries, setExcerciseEntries] = useState(1);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState({});
   const { currentUser } = useContext(AuthContext);
 
-  console.log('currentUser :>> ', currentUser && currentUser.uid);
+  useEffect(() => {
+    if (currentUser) {
+      Firebase.database()
+        .ref('users')
+        .child(currentUser.uid)
+        .child('routine')
+        .on('value', snapshot => {
+          if (snapshot.val()) {
+            setExcerciseEntries(snapshot.val().length);
+            setSelectedOptions([...snapshot.val()]);
+            setDataLoaded(true);
+          } else {
+            setDataLoaded(true);
+          }
+        });
+    }
+  }, [currentUser]);
 
-  console.log('category :>> ', selectedOptions);
+  if (!dataLoaded) return null;
+
   return (
     <div className={styles.home}>
       <Container>
@@ -53,6 +73,7 @@ const CreateRoutine: React.FC<CreateRoutineProps> = props => {
           <Col md={12} className={styles.boxWrapper}>
             <Col md={12} className={styles.boxHeading}>
               <Link to="/">Track workout</Link>
+              <Link to="/records">Records</Link>
               <Button
                 className={styles.signoutButton}
                 variant="light"
